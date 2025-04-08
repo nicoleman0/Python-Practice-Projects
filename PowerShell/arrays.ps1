@@ -32,3 +32,7 @@ $fast_food.ForEach({ "Fast foods: " + $PSItem })
 Write-Host My favorite food is $favorite
 Write-Host The foods in reverse:
 $reverse_food
+
+# Length method
+$car_types = "suv", "sedan", "pickup", "convertible"
+$car_types.ForEach({ $_.Length })
