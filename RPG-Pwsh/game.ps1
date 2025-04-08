@@ -11,13 +11,13 @@ $damage = {
     $this.Name + "'s health is now " + $this.Health + "`n"
 }
 
-# Classes, player, enemies
+# Defining character classes
 
 [string[]]$classes = "Fighter", "Magician", "Ranger"
 
 $player = [PSCustomObject]@{
     Name = "Link"
-    Health = 100
+    Health = 25
     Attack_Level = 10
     Class = $classes[0]
 }
