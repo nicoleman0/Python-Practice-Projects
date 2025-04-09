@@ -31,7 +31,7 @@ viewers_hour = [30, 17, 34, 29, 19, 14, 3, 2, 4, 9, 5,
 
 plt.bar(range(len(games)), viewers, color='mediumblue')
 
-plt.title('Featured Games - Viewers')
+plt.title('Featured Games - Viewers on January 1st, 2015')
 plt.legend(['Twitch'])
 plt.xlabel('Games')
 plt.ylabel('Viewers')
@@ -58,7 +58,26 @@ plt.clf()
 
 plt.plot(hour, viewers_hour)
 plt.title('Time Series')
+
 plt.xlabel('Hour')
 plt.ylabel('Viewers')
+
+plt.plot(hour, viewers_hour)
+
+plt.legend(['2015-01-01'])
+
+ax = plt.subplot()
+
+ax.set_xticks(hour)
+ax.set_yticks([0, 20, 40, 60, 80, 100, 120])
+
+# numpy array
+viewers_hour_array = np.array(viewers_hour)
+
+y_upper = viewers_hour_array * 1.15
+y_lower = viewers_hour_array * 0.85
+
+plt.fill_between(hour, y_lower, y_upper, alpha=0.2)
+
 plt.show()
 plt.clf()
